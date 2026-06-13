@@ -1,16 +1,109 @@
-# React + Vite
+# Consultation Recording Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight web application for managing consultation recordings, client information, and consultation notes.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Dashboard
+- View total clients
+- View total recordings
+- View total consultation notes
+- Recent activity overview
+- Latest recording summary
 
-## React Compiler
+### Client Management
+- Add new clients
+- View client directory
+- Search clients
+- Delete clients
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Recording Management
+- Add consultation recordings
+- Track recording details
+- Search recordings
+- Delete recordings
 
-## Expanding the ESLint configuration
+### Consultation Notes
+- Store consultation notes
+- Save transcripts
+- Track follow-up actions
+- Search notes
+- Delete notes
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React.js
+- Vite
+- React Router DOM
+- Local Storage
+- CSS
+
+## Architecture
+
+The application follows a component-based architecture.
+
+```text
+src
+├── components
+│   └── Sidebar.jsx
+│
+├── pages
+│   ├── Dashboard.jsx
+│   ├── Clients.jsx
+│   ├── Recordings.jsx
+│   └── Notes.jsx
+│
+├── App.jsx
+└── main.jsx
+```
+
+## Data Storage
+
+For simplicity and rapid prototyping, browser Local Storage is used for data persistence.
+
+Stored collections:
+- clients
+- recordings
+- notes
+
+## Assumptions
+
+- Single-user application
+- No authentication required
+- Data persistence handled through browser local storage
+- Recordings are represented through metadata rather than actual audio uploads
+
+## Future Improvements
+
+- Authentication & Authorization
+- Backend API using Node.js/Express
+- MongoDB/PostgreSQL database
+- Audio file uploads
+- Cloud storage integration
+- Speech-to-text transcription
+- AI-generated consultation summaries
+- Role-based access control
+
+## Setup
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run locally:
+
+```bash
+npm run dev
+```
+
+Build project:
+
+```bash
+npm run build
+```
+
+## Deployment
+
+Deployed using Vercel.
